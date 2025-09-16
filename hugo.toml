@@ -1,9 +1,10 @@
 baseURL = "https://gerbenzaagsma.github.io/dh-histories/"
-title = "Histories of Digital Humanities"
+title = "My Hugo Site"
 languageCode = "en"
+enableRobotsTXT = true
+
 [pagination]
   pagerSize = 10
-enableRobotsTXT = true
 
 [taxonomies]
 tag = "tags"
