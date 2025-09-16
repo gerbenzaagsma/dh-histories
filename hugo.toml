@@ -1,5 +1,5 @@
-baseURL = "https://<your-username>.github.io/<your-repo>/"
-title = "My Hugo Site"
+baseURL = "https://gerbenzaagsma.github.io/dh-histories/"
+title = "Histories of Digital Humanities"
 languageCode = "en"
 paginate = 10
 enableRobotsTXT = true
