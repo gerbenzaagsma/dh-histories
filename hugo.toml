@@ -1,5 +1,5 @@
 baseURL = "https://gerbenzaagsma.github.io/dh-histories/"
-title = "My Hugo Site"
+title = "Histories of Digital Humanities"
 languageCode = "en"
 enableRobotsTXT = true
 
@@ -11,7 +11,7 @@ tag = "tags"
 category = "categories"
 
 [params]
-  brand = "My Site"
+  brand = "Histories of Digital Humanities"
   description = "News, events, and projects."
 
 [markup]

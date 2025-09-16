@@ -1,0 +1,79 @@
+{{ define "main" }}
+
+  <h1>{{ site.Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  {{/* Helper: pick N pages from a section, sorted appropriately */}}
+  {{ $news    := (where site.RegularPages "Section" "news")    | first 5 }}
+  {{ $projects:= (where site.RegularPages "Section" "projects")| first 5 }}
+
+  {{/* For events: sort by event_date (fallback to .Date), future first */}}
+  {{ $eventsAll := where site.RegularPages "Section" "events" }}
+  {{ $events := slice }}
+  {{ range $eventsAll }}
+    {{ $d := .Params.event_date | default .Date }}
+    {{ $events = $events | append (dict "page" . "when" $d) }}
+  {{ end }}
+  {{/* keep upcoming first, then take 5 */}}
+  {{ $now := now }}
+  {{ $upcoming := where $events "when" "ge" $now }}
+  {{ $sortedUpcoming := sort $upcoming "when" }}
+  {{ $events = first 5 (apply $sortedUpcoming "index" "." "page") }}
+
+  <section>
+    <h2>Latest News</h2>
+    <ul class="list">
+      {{ range $news }}
+        <li>
+          <a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a>
+          <span> · {{ .Date.Format "2006-01-02" }}</span>
+          {{ with .Params.tags }}
+            <span> · {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>{{ end }}</span>
+          {{ end }}
+          {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+    <p><a href="{{ "/news/" | relURL }}">View all news →</a></p>
+  </section>
+
+  <section>
+    <h2>Upcoming Events</h2>
+    {{ if not (len $events) }}<p>No upcoming events.</p>{{ else }}
+    <ul class="list">
+      {{ range $events }}
+        {{ $p := . }}
+        <li>
+          <a href="{{ $p.RelPermalink }}"><strong>{{ $p.Title }}</strong></a>
+          {{ $d := $p.Params.event_date | default $p.Date }}
+          <span> · {{ $d | time.Format "2006-01-02" }}</span>
+          {{ with $p.Params.location }}<span> · {{ . }}</span>{{ end }}
+          {{ with $p.Params.tags }}
+            <span> · {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>{{ end }}</span>
+          {{ end }}
+          {{ with $p.Summary }}<p>{{ . }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    <p><a href="{{ "/events/" | relURL }}">View all events →</a></p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <ul class="list">
+      {{ range $projects }}
+        <li>
+          <a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a>
+          <span> · {{ .Date.Format "2006-01-02" }}</span>
+          {{ with .Params.tags }}
+            <span> · {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>{{ end }}</span>
+          {{ end }}
+          {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+        </li>
+      {{ end }}
+    </ul>
+    <p><a href="{{ "/projects/" | relURL }}">View all projects →</a></p>
+  </section>
+
+{{ end }}
