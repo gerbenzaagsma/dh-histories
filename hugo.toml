@@ -1,0 +1,17 @@
+baseURL = "https://<your-username>.github.io/<your-repo>/"
+title = "My Hugo Site"
+languageCode = "en"
+paginate = 10
+enableRobotsTXT = true
+
+[taxonomies]
+tag = "tags"
+category = "categories"
+
+[params]
+  brand = "My Site"
+  description = "News, events, and projects."
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true

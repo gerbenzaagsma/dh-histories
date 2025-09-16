@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    <p class="meta">
+      {{ if .Params.event_date }}
+        Event: {{ .Params.event_date | time.Format "2006-01-02" }}
+        {{ with .Params.location }} · {{ . }}{{ end }}
+      {{ else }}
+        {{ .Date.Format "2006-01-02" }}
+      {{ end }}
+    </p>
+    <div class="prose">{{ .Content }}</div>
+    {{ with .Params.tags }}
+      <p>Tags:
+        {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>{{ end }}
+      </p>
+    {{ end }}
+  </article>
+{{ end }}

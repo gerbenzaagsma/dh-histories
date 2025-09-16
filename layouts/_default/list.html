@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+  <ul class="list">
+    {{ range .Paginator.Pages }}
+      <li>
+        <a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a>
+        {{ with .Params.event_date }}<span> · {{ . | time.Format "2006-01-02" }}</span>{{ end }}
+        {{ if not .Params.event_date }}<span> · {{ .Date.Format "2006-01-02" }}</span>{{ end }}
+        {{ with .Params.tags }}
+          <span> · {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>{{ end }}</span>
+        {{ end }}
+        {{ with .Summary }}<p>{{ . }}</p>{{ end }}
+      </li>
+    {{ end }}
+  </ul>
+  {{ template "_internal/pagination.html" . }}
+{{ end }}
