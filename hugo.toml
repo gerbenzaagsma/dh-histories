@@ -11,9 +11,36 @@ tag = "tags"
 category = "categories"
 
 [params]
-  brand = "Histories of Digital Humanities"
-  description = "News, events, and projects."
+  subtitle = "Digital Histories"
+  description = "News, events, and projects"
+  author = "Gerben Zaagsma"
+
+  [params.style.vars]
+    highlightColor = "#e22d30"   # accent color
 
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
+
+theme = "mainroad"
+
+[menu]
+  [[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 10
+
+  [[menu.main]]
+    name = "Events"
+    url = "/events/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 30
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 40

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Histories of Digital Humanities</title>
+    <link>http://localhost:1313/dh-histories/</link>
+    <description>Recent content in Home on Histories of Digital Humanities</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Sep 2025 18:12:19 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/dh-histories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New Event</title>
+      <link>http://localhost:1313/dh-histories/events/new-event/</link>
+      <pubDate>Tue, 16 Sep 2025 18:12:19 +0200</pubDate>
+      <guid>http://localhost:1313/dh-histories/events/new-event/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cool App</title>
+      <link>http://localhost:1313/dh-histories/projects/cool-app/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/projects/cool-app/</guid>
+      <description>A tiny CLI tool that does one thing well.</description>
+    </item>
+    <item>
+      <title>Launch Day Meetup</title>
+      <link>http://localhost:1313/dh-histories/events/launch-meetup/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/events/launch-meetup/</guid>
+      <description>Join us to celebrate the launch and meet the team.</description>
+    </item>
+    <item>
+      <title>We Launched!</title>
+      <link>http://localhost:1313/dh-histories/news/we-launched/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/news/we-launched/</guid>
+      <description>Our new site is live—built with Hugo and deployed to GitHub Pages.</description>
+    </item>
+  </channel>
+</rss>

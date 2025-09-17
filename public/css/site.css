@@ -1,0 +1,9 @@
+:root { --mx: 880px; --fg: #1f2937; --muted:#6b7280; }
+* { box-sizing: border-box; }
+body { font-family: ui-sans-serif, system-ui, Arial, sans-serif; color: var(--fg); margin:0; }
+.container { max-width: var(--mx); margin: 2rem auto; padding: 0 1rem; }
+.site-header, .site-footer { max-width: var(--mx); margin: 0 auto; padding: 1rem; display:flex; gap:1rem; align-items:center; }
+.site-header nav a { margin-right: 1rem; text-decoration:none; }
+.list { list-style:none; padding:0; }
+.meta { color: var(--muted); }
+.prose p { line-height: 1.6; }

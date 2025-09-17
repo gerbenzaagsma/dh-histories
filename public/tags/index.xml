@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Histories of Digital Humanities</title>
+    <link>http://localhost:1313/dh-histories/tags/</link>
+    <description>Recent content in Tags on Histories of Digital Humanities</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/dh-histories/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cli</title>
+      <link>http://localhost:1313/dh-histories/tags/cli/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/tags/cli/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>http://localhost:1313/dh-histories/tags/go/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Meetup</title>
+      <link>http://localhost:1313/dh-histories/tags/meetup/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/tags/meetup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Product</title>
+      <link>http://localhost:1313/dh-histories/tags/product/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/tags/product/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Release</title>
+      <link>http://localhost:1313/dh-histories/tags/release/</link>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/tags/release/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
