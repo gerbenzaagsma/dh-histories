@@ -19,6 +19,15 @@ category = "categories"
   [params.style.vars]
     highlightColor = "#e22d30"   # accent color
 
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = "right"
+
+   # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist", "social"]
+
+
 [markup]
   [markup.goldmark.renderer]
     unsafe = true

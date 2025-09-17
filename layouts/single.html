@@ -39,12 +39,17 @@
       {{ .Content }}
     </div>
 
-    {{ with .Params.tags }}
-      <p>Tags:
-        {{ range $i, $t := . }}{{ if $i }}, {{ end }}
-          <a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>
-        {{ end }}
-      </p>
-    {{ end }}
+   {{/* Pretty tag list that links to each tag page */}}
+{{ $tags := .GetTerms "tags" }}
+{{ with $tags }}
+  <div class="post-tags">
+    <span class="tags-title">Tags:</span>
+    <ul class="tags">
+      {{ range . }}
+        <li><a class="tag" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
   </article>
 {{ end }}
