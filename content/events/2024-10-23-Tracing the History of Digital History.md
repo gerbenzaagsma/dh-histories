@@ -2,7 +2,7 @@
 title: "International conference “Revolutionary, Disruptive, or Just Repeating Itself? Tracing the History of Digital History” #dhiha9"
 date: 2024-10-23
 type: "events"
-event_date: 2024-10-23
+event_date: 2025-10-23
 location: "German Historical Institute Paris"
 tags: [history]
 summary: ""
