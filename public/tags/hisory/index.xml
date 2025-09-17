@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hisory on Histories of Digital Humanities</title>
+    <link>http://localhost:1313/dh-histories/tags/hisory/</link>
+    <description>Recent content in Hisory on Histories of Digital Humanities</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/dh-histories/tags/hisory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>International conference “Revolutionary, Disruptive, or Just Repeating Itself? Tracing the History of Digital History” #dhiha9</title>
+      <link>http://localhost:1313/dh-histories/events/2024-10-23-tracing-the-history-of-digital-history/</link>
+      <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/dh-histories/events/2024-10-23-tracing-the-history-of-digital-history/</guid>
+      <description>Test event</description>
+    </item>
+  </channel>
+</rss>
