@@ -1,17 +1,38 @@
 {{ define "main" }}
+  {{/* Parse dates; fall back to old event_date if needed */}}
+  {{ $start := or .Params.event_start .Params.event_date }}
+  {{ $end   := .Params.event_end }}
+
+  {{ $startT := cond $start ($start | time) nil }}
+  {{ $endT   := cond $end   ($end   | time) nil }}
+
+  {{/* Helpers for comparisons */}}
+  {{ $sameDay   := and $startT $endT (eq ($startT | time.Format "2006-01-02") ($endT | time.Format "2006-01-02")) }}
+  {{ $sameMonth := and $startT $endT (and (eq ($startT | time.Format "2006") ($endT | time.Format "2006")) (eq ($startT | time.Format "01") ($endT | time.Format "01"))) }}
+  {{ $sameYear  := and $startT $endT (eq ($startT | time.Format "2006") ($endT | time.Format "2006")) }}
+
   <article>
     <h1>{{ .Title }}</h1>
 
     <p class="meta">
-      {{ with .Params.event_date }}
-        📅 Event Date: {{ . | time.Format "2006-01-02" }}
+      {{ if and $startT $endT }}
+        {{/* Range formatting */}}
+        {{ if $sameDay }}
+          📅 {{ $startT | time.Format "Mon, Jan 2, 2006" }}
+        {{ else if $sameMonth }}
+          📅 {{ $startT | time.Format "Jan 2" }}–{{ $endT | time.Format "2, 2006" }}
+        {{ else if $sameYear }}
+          📅 {{ $startT | time.Format "Jan 2" }} – {{ $endT | time.Format "Jan 2, 2006" }}
+        {{ else }}
+          📅 {{ $startT | time.Format "Jan 2, 2006" }} – {{ $endT | time.Format "Jan 2, 2006" }}
+        {{ end }}
+      {{ else if $startT }}
+        📅 {{ $startT | time.Format "Mon, Jan 2, 2006" }}
       {{ else }}
-        📅 Published: {{ .Date.Format "2006-01-02" }}
+        📅 {{ .Date | time.Format "Mon, Jan 2, 2006" }}
       {{ end }}
 
-      {{ with .Params.location }}
-        · 📍 {{ . }}
-      {{ end }}
+      {{ with .Params.location }} · 📍 {{ . }}{{ end }}
     </p>
 
     <div class="post-content">
@@ -20,8 +41,8 @@
 
     {{ with .Params.tags }}
       <p>Tags:
-        {{ range $i, $t := . }}
-          {{ if $i }}, {{ end }}<a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>
+        {{ range $i, $t := . }}{{ if $i }}, {{ end }}
+          <a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>
         {{ end }}
       </p>
     {{ end }}
