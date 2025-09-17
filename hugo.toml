@@ -1,6 +1,7 @@
 baseURL = "https://gerbenzaagsma.github.io/dh-histories/"
 title = "Histories of Digital Humanities"
 languageCode = "en"
+theme = "mainroad"
 enableRobotsTXT = true
 
 [pagination]
@@ -22,7 +23,6 @@ category = "categories"
   [markup.goldmark.renderer]
     unsafe = true
 
-theme = "mainroad"
 
 [menu]
   [[menu.main]]
