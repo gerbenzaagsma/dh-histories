@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+
+    <p class="meta">
+      {{ with .Params.event_date }}
+        📅 Event Date: {{ . | time.Format "2006-01-02" }}
+      {{ else }}
+        📅 Published: {{ .Date.Format "2006-01-02" }}
+      {{ end }}
+
+      {{ with .Params.location }}
+        · 📍 {{ . }}
+      {{ end }}
+    </p>
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
+    {{ with .Params.tags }}
+      <p>Tags:
+        {{ range $i, $t := . }}
+          {{ if $i }}, {{ end }}<a href="{{ (site.GetPage (printf "/tags/%s" $t)).RelPermalink }}">{{ $t }}</a>
+        {{ end }}
+      </p>
+    {{ end }}
+  </article>
+{{ end }}
