@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meetup on Histories of Digital Humanities</title>
-    <link>http://localhost:1313/dh-histories/tags/meetup/</link>
+    <link>http://localhost:53427/dh-histories/tags/meetup/</link>
     <description>Recent content in Meetup on Histories of Digital Humanities</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Tue, 16 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/dh-histories/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:53427/dh-histories/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Launch Day Meetup</title>
-      <link>http://localhost:1313/dh-histories/events/launch-meetup/</link>
+      <link>http://localhost:53427/dh-histories/events/launch-meetup/</link>
       <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/dh-histories/events/launch-meetup/</guid>
+      <guid>http://localhost:53427/dh-histories/events/launch-meetup/</guid>
       <description>Join us to celebrate the launch and meet the team.</description>
     </item>
   </channel>
