@@ -3,6 +3,7 @@ title: "We Launched!"
 date: 2025-09-16
 type: "news"
 tags: ["release", "product"]
+menu: "main"
 summary: "Our new site is live—built with Hugo and deployed to GitHub Pages."
 ---
 

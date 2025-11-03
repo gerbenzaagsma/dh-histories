@@ -25,7 +25,7 @@ category = "categories"
   single = "right"
 
    # Enable widgets in given order
-  widgets = ["search", "recent", "categories", "taglist", "social"]
+  widgets = ["sidemenu", "search", "recent", "categories", "taglist", "social"]
 
 
 [markup]
